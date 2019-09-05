@@ -1,0 +1,14 @@
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/bin/Debug/netcoreapp2.2/AngularDotnet.API.deps.json
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/bin/Debug/netcoreapp2.2/AngularDotnet.API.runtimeconfig.json
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/bin/Debug/netcoreapp2.2/AngularDotnet.API.runtimeconfig.dev.json
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/bin/Debug/netcoreapp2.2/AngularDotnet.API.dll
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/bin/Debug/netcoreapp2.2/AngularDotnet.API.pdb
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/obj/Debug/netcoreapp2.2/AngularDotnet.API.csprojAssemblyReference.cache
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/obj/Debug/netcoreapp2.2/AngularDotnet.API.csproj.CoreCompileInputs.cache
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/obj/Debug/netcoreapp2.2/AngularDotnet.API.RazorAssemblyInfo.cache
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/obj/Debug/netcoreapp2.2/AngularDotnet.API.RazorAssemblyInfo.cs
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/obj/Debug/netcoreapp2.2/AngularDotnet.API.AssemblyInfoInputs.cache
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/obj/Debug/netcoreapp2.2/AngularDotnet.API.AssemblyInfo.cs
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/obj/Debug/netcoreapp2.2/AngularDotnet.API.RazorTargetAssemblyInfo.cache
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/obj/Debug/netcoreapp2.2/AngularDotnet.API.dll
+/Users/ryan.achten/Documents/workspace/angular-dotnet-test/AngularDotnet.API/obj/Debug/netcoreapp2.2/AngularDotnet.API.pdb
