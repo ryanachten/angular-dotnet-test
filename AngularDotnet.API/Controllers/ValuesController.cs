@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AngularDotnet.API.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AngularDotnet.API.Controllers
 {
@@ -21,18 +22,18 @@ namespace AngularDotnet.API.Controllers
 
         // GET api/values
         [HttpGet]
-        public IActionResult GetValues()
+        public async Task<IActionResult> GetValues()
         {
-            var values = _context.Values.ToList();
+            var values = await _context.Values.ToListAsync();
             return Ok(values);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
 
-        public IActionResult GetValue(int id)
+        public async Task<IActionResult> GetValue(int id)
         {
-            var value = _context.Values.FirstOrDefault(val => val.Id == id);
+            var value = await _context.Values.FirstOrDefaultAsync(val => val.Id == id);
             return Ok(value);
         }
 
