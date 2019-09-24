@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using AngularDotnet.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AngularDotnet.API.Data
 {
@@ -14,9 +15,42 @@ namespace AngularDotnet.API.Data
 
         }
 
-        public Task<User> Login(string username, string password)
+        public async Task<User> Login(string username, string password)
         {
-            throw new System.NotImplementedException();
+            // Will return null in the case of the username doesn't match any DB records
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+
+            if (user == null)
+            {
+                // Returnng null from this task will produce a 403 unauthed HTTP response
+                return null;
+            }
+            if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+            {
+                return null;
+            }
+
+            return user;
+        }
+
+        private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
+        {
+            // Use password salt to generate hash and verify whether the DB record matches the user input
+            using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
+            {
+                // Convert the password to a byte array so that is can be used to produce the hash
+                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+
+                // Iterate over the byte arrays to compare values
+                for (int i = 0; i < computedHash.Length; i++)
+                {
+                    if (computedHash[i] != passwordHash[i])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         public async Task<User> Register(User user, string password)
@@ -25,6 +59,7 @@ namespace AngularDotnet.API.Data
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
             user.PasswordHash = passwordHash;
+
             user.PasswordSalt = passwordSalt;
 
             // Save the user to the database
@@ -45,7 +80,6 @@ namespace AngularDotnet.API.Data
                 // Convert the password to a byte array so that is can be used to produce the hash
                 passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
             }
-            throw new NotImplementedException();
         }
 
         public Task<bool> UserExists(string username)
