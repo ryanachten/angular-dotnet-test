@@ -1,0 +1,6 @@
+.vscode/*
+.DS_Store
+
+# .Net build files
+bin/*
+obj/*
