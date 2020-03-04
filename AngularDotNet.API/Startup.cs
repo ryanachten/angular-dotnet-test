@@ -36,7 +36,9 @@ namespace AngularDotNet.API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // Will attempt to redirect HTTP requests as HTTPS
+            // TODO: uncomment later
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
