@@ -1,4 +1,4 @@
-namespace AngularDotNet.API.Models
+namespace AngularDotnet.API.Models
 {
     public class Value
     {
