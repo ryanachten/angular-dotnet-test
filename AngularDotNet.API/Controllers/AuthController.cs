@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using AngularDotnet.API.Data;
+using AngularDotnet.API.DTOs;
 using AngularDotnet.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,19 +17,19 @@ namespace AngularDotnet.API.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(string username, string password)
+        public async Task<IActionResult> Register(UserForRegisterDto userForRegisterDto)
         {
             // TODO: validate request
-            username = username.ToLower();
-            if (await _repo.UserExists(username))
+            userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
+            if (await _repo.UserExists(userForRegisterDto.Username))
                 return BadRequest("User name already exists");
 
             var userToCreate = new User
             {
-                Username = username
+                Username = userForRegisterDto.Username
             };
 
-            var createdUser = await _repo.Register(userToCreate, password);
+            var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
 
             // TODO: should be using CreatedAtRoute
             return StatusCode(201);
