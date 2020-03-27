@@ -3,9 +3,9 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 
-import { AppComponent } from "./app.component";
-import { ValueComponent } from "./value/value.component";
-import { NavComponent } from "./nav/nav.component";
+import { AppComponent } from "./components/app.component";
+import { ValueComponent } from "./components/value/value.component";
+import { NavComponent } from "./components/nav/nav.component";
 
 @NgModule({
   declarations: [AppComponent, ValueComponent, NavComponent],
