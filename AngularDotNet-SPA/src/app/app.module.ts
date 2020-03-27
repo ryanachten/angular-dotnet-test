@@ -6,11 +6,12 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./components/app.component";
 import { ValueComponent } from "./components/value/value.component";
 import { NavComponent } from "./components/nav/nav.component";
+import { AuthService } from "./services/auth.service";
 
 @NgModule({
   declarations: [AppComponent, ValueComponent, NavComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
