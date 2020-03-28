@@ -7,9 +7,17 @@ import { AppComponent } from "./components/app.component";
 import { ValueComponent } from "./components/value/value.component";
 import { NavComponent } from "./components/nav/nav.component";
 import { AuthService } from "./services/auth.service";
+import { HomeComponent } from "./components/home/home.component";
+import { RegisterComponent } from "./components/register/register.component";
 
 @NgModule({
-  declarations: [AppComponent, ValueComponent, NavComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ValueComponent,
+    NavComponent,
+    RegisterComponent
+  ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [AuthService],
   bootstrap: [AppComponent]
