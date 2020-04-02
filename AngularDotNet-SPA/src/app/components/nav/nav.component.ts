@@ -10,7 +10,7 @@ import { AlertService } from "src/app/services/alert.service";
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(private auth: AuthService, private alert: AlertService) {}
+  constructor(public auth: AuthService, private alert: AlertService) {}
 
   ngOnInit() {}
 
