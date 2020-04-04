@@ -7,6 +7,5 @@ obj/*
 
 # Local DB
 angulardotnet.db*
-Migrations/*
 
 appsettings*.json
