@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AngularDotnet.API.Data
 {
-    public class DatingRepository : IDatingRespository
+    public class DatingRepository : IDatingRepository
     {
         private readonly DataContext _context;
         public DatingRepository(DataContext context)
