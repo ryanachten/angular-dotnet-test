@@ -13,10 +13,11 @@ import { AuthService } from "./services/auth.service";
 import { HomeComponent } from "./components/home/home.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { ListsComponent } from "./components/lists/lists.component";
-import { MemberListComponent } from "./components/member-list/member-list.component";
+import { MemberListComponent } from "./components/members/member-list/member-list.component";
 import { MessagesComponent } from "./components/messages/messages.component";
 import { ErrorInterceptorProvider } from "./services/error.interceptor";
 import { appRoutes } from "./routes";
+import { MemberCardComponent } from "./components/members/member-card/member-card.component";
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import { appRoutes } from "./routes";
     HomeComponent,
     ListsComponent,
     MemberListComponent,
+    MemberCardComponent,
     MessagesComponent,
     NavComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +36,9 @@ import { appRoutes } from "./routes";
     FormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [AuthService, ErrorInterceptorProvider],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
