@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
+import { JwtModule } from "@auth0/angular-jwt";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 
 import { AppComponent } from "./components/app.component";
@@ -18,6 +19,8 @@ import { MessagesComponent } from "./components/messages/messages.component";
 import { ErrorInterceptorProvider } from "./services/error.interceptor";
 import { appRoutes } from "./routes";
 import { MemberCardComponent } from "./components/members/member-card/member-card.component";
+
+const tokenGetter = () => localStorage.getItem("token");
 
 @NgModule({
   declarations: [
@@ -37,6 +40,13 @@ import { MemberCardComponent } from "./components/members/member-card/member-car
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter,
+        whitelistedDomains: ["localhost:5000"],
+        blacklistedRoutes: ["localhost:5000/api/auth"],
+      },
+    }),
   ],
   providers: [AuthService, ErrorInterceptorProvider],
   bootstrap: [AppComponent],
