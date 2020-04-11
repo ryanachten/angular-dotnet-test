@@ -19,6 +19,7 @@ import { MessagesComponent } from "./components/messages/messages.component";
 import { ErrorInterceptorProvider } from "./services/error.interceptor";
 import { appRoutes } from "./routes";
 import { MemberCardComponent } from "./components/members/member-card/member-card.component";
+import { MemberDetailComponent } from "./components/members/member-detail/member-detail.component";
 
 const tokenGetter = () => localStorage.getItem("token");
 
@@ -29,6 +30,7 @@ const tokenGetter = () => localStorage.getItem("token");
     ListsComponent,
     MemberListComponent,
     MemberCardComponent,
+    MemberDetailComponent,
     MessagesComponent,
     NavComponent,
     RegisterComponent,
