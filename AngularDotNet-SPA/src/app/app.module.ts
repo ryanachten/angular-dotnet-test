@@ -22,6 +22,7 @@ import { appRoutes } from "./routes";
 import { MemberCardComponent } from "./components/members/member-card/member-card.component";
 import { MemberDetailComponent } from "./components/members/member-detail/member-detail.component";
 import { MemberDetailResolver } from "./resolvers/member-detail.resolver";
+import { MemberListResolver } from "./resolvers/member-list.resolver";
 
 const tokenGetter = () => localStorage.getItem("token");
 
@@ -53,7 +54,12 @@ const tokenGetter = () => localStorage.getItem("token");
       },
     }),
   ],
-  providers: [AuthService, ErrorInterceptorProvider, MemberDetailResolver],
+  providers: [
+    AuthService,
+    ErrorInterceptorProvider,
+    MemberDetailResolver,
+    MemberListResolver,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
