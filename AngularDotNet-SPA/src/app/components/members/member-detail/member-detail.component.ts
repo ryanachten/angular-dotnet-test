@@ -12,21 +12,11 @@ import { ActivatedRoute } from "@angular/router";
 export class MemberDetailComponent implements OnInit {
   user: User;
 
-  constructor(
-    private userService: UserService,
-    private alert: AlertService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.loadUser();
-  }
-
-  loadUser() {
-    const id = parseInt(this.route.snapshot.params["id"]);
-    this.userService.getUser(id).subscribe(
-      (user: User) => (this.user = user),
-      (error) => this.alert.error(error)
-    );
+    this.route.data.subscribe((data) => {
+      this.user = data["user"];
+    });
   }
 }
