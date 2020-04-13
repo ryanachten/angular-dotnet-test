@@ -912,6 +912,11 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
+"@kolkov/ngx-gallery@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@kolkov/ngx-gallery/-/ngx-gallery-1.1.0.tgz#58d4e522a9650d9c89c2dd0bd800b21b5e1b9f54"
+  integrity sha512-9ZXDAzLNqfH5pWHfQqq8qc/g5PBSgkI6ieXe/6rO5bRoMBJAh3hr+w3SJG4zC3ZuLZezuuVClp9PV1hGTbggeQ==
+
 "@ngtools/webpack@9.0.7":
   version "9.0.7"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-9.0.7.tgz#2d9397544afcf503530eafc764c64d40a99fa070"
