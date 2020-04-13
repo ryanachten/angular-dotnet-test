@@ -24,6 +24,8 @@ import { MemberCardComponent } from "./components/members/member-card/member-car
 import { MemberDetailComponent } from "./components/members/member-detail/member-detail.component";
 import { MemberDetailResolver } from "./resolvers/member-detail.resolver";
 import { MemberListResolver } from "./resolvers/member-list.resolver";
+import { MemberEditComponent } from "./components/members/member-edit/member-edit.component";
+import { MemberEditResolver } from "./resolvers/member-edit.resolver";
 
 const tokenGetter = () => localStorage.getItem("token");
 
@@ -35,6 +37,7 @@ const tokenGetter = () => localStorage.getItem("token");
     MemberListComponent,
     MemberCardComponent,
     MemberDetailComponent,
+    MemberEditComponent,
     MessagesComponent,
     NavComponent,
     RegisterComponent,
@@ -60,6 +63,7 @@ const tokenGetter = () => localStorage.getItem("token");
     AuthService,
     ErrorInterceptorProvider,
     MemberDetailResolver,
+    MemberEditResolver,
     MemberListResolver,
   ],
   bootstrap: [AppComponent],
