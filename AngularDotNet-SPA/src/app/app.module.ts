@@ -26,6 +26,8 @@ import { MemberDetailResolver } from "./resolvers/member-detail.resolver";
 import { MemberListResolver } from "./resolvers/member-list.resolver";
 import { MemberEditComponent } from "./components/members/member-edit/member-edit.component";
 import { MemberEditResolver } from "./resolvers/member-edit.resolver";
+import { AuthGuard } from "./guards/auth.guard";
+import { PreventUnsavedChanges } from "./guards/prevent-unsaved-changes.guard";
 
 const tokenGetter = () => localStorage.getItem("token");
 
@@ -61,6 +63,8 @@ const tokenGetter = () => localStorage.getItem("token");
   ],
   providers: [
     AuthService,
+    AuthGuard,
+    PreventUnsavedChanges,
     ErrorInterceptorProvider,
     MemberDetailResolver,
     MemberEditResolver,
