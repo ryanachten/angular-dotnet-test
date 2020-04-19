@@ -39,6 +39,15 @@ namespace AngularDotnet.API.Controllers
             _cloudinary = new Cloudinary(acc);
         }
 
+        [HttpGet("{id}", Name = "GetPhoto")]
+        public async Task<IActionResult> GetPhoto(int id)
+        {
+            var photoFromRepo = await _repo.GetPhoto(id);
+            var photo = _mapper.Map<PhotoForReturnDto>(photoFromRepo);
+
+            return Ok(photo);
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddPhotoForUser(int userId, PhotoForCreationDto photoForCreationDto)
         {
@@ -76,8 +85,8 @@ namespace AngularDotnet.API.Controllers
 
             if (await _repo.SaveAll())
             {
-                // TODO: should be a CreatedAtRoute response
-                return Ok();
+                var photoForReturn = _mapper.Map<PhotoForReturnDto>(photo);
+                return CreatedAtRoute("GetPhoto", new { userId = userId, id = photo.Id }, photoForReturn);
             }
 
             return BadRequest("Failed to add photo");
