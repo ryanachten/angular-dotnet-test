@@ -25,6 +25,7 @@ import { MemberDetailComponent } from "./components/members/member-detail/member
 import { MemberDetailResolver } from "./resolvers/member-detail.resolver";
 import { MemberListResolver } from "./resolvers/member-list.resolver";
 import { MemberEditComponent } from "./components/members/member-edit/member-edit.component";
+import { PhotoEditorComponent } from "./components/members/photo-editor/photo-editor.component";
 import { MemberEditResolver } from "./resolvers/member-edit.resolver";
 import { AuthGuard } from "./guards/auth.guard";
 import { PreventUnsavedChanges } from "./guards/prevent-unsaved-changes.guard";
@@ -43,6 +44,7 @@ const tokenGetter = () => localStorage.getItem("token");
     MessagesComponent,
     NavComponent,
     RegisterComponent,
+    PhotoEditorComponent,
   ],
   imports: [
     BrowserModule,
