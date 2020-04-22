@@ -3,6 +3,8 @@ import { FileUploader } from "ng2-file-upload";
 import { Photo } from "src/app/models/photo";
 import { environment } from "src/environments/environment";
 import { AuthService } from "src/app/services/auth.service";
+import { UserService } from "src/app/services/user.service";
+import { AlertService } from "src/app/services/alert.service";
 
 @Component({
   selector: "app-photo-editor",
@@ -16,7 +18,11 @@ export class PhotoEditorComponent implements OnInit {
   response: string;
   baseUrl = environment.apiUrl;
 
-  constructor(private auth: AuthService) {}
+  constructor(
+    private auth: AuthService,
+    private userService: UserService,
+    private alert: AlertService
+  ) {}
 
   ngOnInit() {
     this.initUploader();
@@ -50,5 +56,14 @@ export class PhotoEditorComponent implements OnInit {
 
   fileOverBase(e: any): void {
     this.hasBaseDropZoneOver = e;
+  }
+
+  setMainPhoto(photo: Photo) {
+    this.userService
+      .setMainPhoto(this.auth.decodedToken.nameid, photo.id)
+      .subscribe(
+        () => console.log("Success set main"),
+        (error) => this.alert.error(error)
+      );
   }
 }
