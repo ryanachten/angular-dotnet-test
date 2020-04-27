@@ -15,6 +15,7 @@
     </ul>
 
     <div class="dropdown" *ngIf="loggedIn()" dropdown>
+      <span class="mr-1"><img class="nav__user-photo" src="{{auth.currentUser.photoUrl}}" alt="User photo"></span>
       <a class="dropdown-toggle text-light" role="button" id="dropdownMenuLink" aria-haspopup="true"
         aria-expanded="false" dropdownToggle>
         Welcome {{auth.decodedToken?.unique_name | titlecase}}

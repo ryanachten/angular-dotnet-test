@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-nav",
   templateUrl: "./nav.component.html",
-  styleUrls: ["./nav.component.css"]
+  styleUrls: ["./nav.component.css"],
 })
 export class NavComponent implements OnInit {
   model: any = {};
@@ -21,8 +21,8 @@ export class NavComponent implements OnInit {
 
   login() {
     this.auth.login(this.model).subscribe(
-      next => this.alert.success("Logged in successfully"),
-      error => this.alert.error(error),
+      (next) => this.alert.success("Logged in successfully"),
+      (error) => this.alert.error(error),
       () => this.router.navigate(["/members"])
     );
   }
@@ -33,6 +33,9 @@ export class NavComponent implements OnInit {
 
   logout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    this.auth.decodedToken = null;
+    this.auth.currentUser = null;
     this.alert.message("Logged out");
     this.router.navigate(["/home"]);
   }
