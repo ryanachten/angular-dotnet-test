@@ -19,7 +19,7 @@ export class MemberEditComponent implements OnInit {
       $event.returnValue = true;
     }
   }
-
+  photoUrl: string;
   user: User;
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +32,9 @@ export class MemberEditComponent implements OnInit {
     this.route.data.subscribe((data) => {
       this.user = data["user"];
     });
+    this.auth.currentPhotoUrl.subscribe(
+      (photoUrl) => (this.photoUrl = photoUrl)
+    );
   }
 
   updateUser() {
