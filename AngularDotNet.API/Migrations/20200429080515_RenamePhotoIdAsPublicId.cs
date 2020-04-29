@@ -2,12 +2,12 @@
 
 namespace AngularDotNet.API.Migrations
 {
-    public partial class AddPublicIdToPhoto : Migration
+    public partial class RenamePhotoIdAsPublicId : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "PhotoId",
+                name: "PublicId",
                 table: "Photos",
                 nullable: true);
         }
@@ -15,7 +15,7 @@ namespace AngularDotNet.API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "PhotoId",
+                name: "PublicId",
                 table: "Photos");
         }
     }

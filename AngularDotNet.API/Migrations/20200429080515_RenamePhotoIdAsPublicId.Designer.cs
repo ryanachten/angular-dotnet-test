@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AngularDotNet.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200417211301_AddPublicIdToPhoto")]
-    partial class AddPublicIdToPhoto
+    [Migration("20200429080515_RenamePhotoIdAsPublicId")]
+    partial class RenamePhotoIdAsPublicId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,7 +33,7 @@ namespace AngularDotNet.API.Migrations
                     b.Property<bool>("IsMain")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("PhotoId")
+                    b.Property<string>("PublicId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Url")
