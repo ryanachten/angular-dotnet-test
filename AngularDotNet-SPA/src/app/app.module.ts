@@ -6,6 +6,7 @@ import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { JwtModule } from "@auth0/angular-jwt";
+import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { NgxGalleryModule } from "@kolkov/ngx-gallery";
@@ -55,6 +56,7 @@ const tokenGetter = () => localStorage.getItem("token");
     FileUploadModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     NgxGalleryModule,
