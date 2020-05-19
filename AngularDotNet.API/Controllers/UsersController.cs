@@ -4,12 +4,14 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AngularDotnet.API.Data;
 using AngularDotnet.API.DTOs;
+using AngularDotnet.API.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AngularDotnet.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
