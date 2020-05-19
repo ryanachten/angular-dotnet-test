@@ -11,6 +11,7 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { NgxGalleryModule } from "@kolkov/ngx-gallery";
 import { FileUploadModule } from "ng2-file-upload";
+import { TimeagoModule } from "ngx-timeago";
 
 import { AppComponent } from "./components/app.component";
 import { NavComponent } from "./components/nav/nav.component";
@@ -67,6 +68,7 @@ const tokenGetter = () => localStorage.getItem("token");
         blacklistedRoutes: ["localhost:5000/api/auth"],
       },
     }),
+    TimeagoModule.forRoot(),
   ],
   providers: [
     AuthService,
