@@ -10,6 +10,7 @@ import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { NgxGalleryModule } from "@kolkov/ngx-gallery";
+import { PaginationModule } from "ngx-bootstrap/pagination";
 import { FileUploadModule } from "ng2-file-upload";
 import { TimeagoModule } from "ngx-timeago";
 
@@ -58,6 +59,7 @@ const tokenGetter = () => localStorage.getItem("token");
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
+    PaginationModule.forRoot(),
     TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     NgxGalleryModule,
